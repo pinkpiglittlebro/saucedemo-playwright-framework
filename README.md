@@ -8,6 +8,8 @@ Automation testing framework developed using Playwright and TypeScript to demons
 - API testing using Playwright Request API
 - Page Object Model (POM) architecture
 - Test data management with JSON fixtures
+- Smoke test execution using Playwright tags
+- Trace, screenshot, and video capture for failed tests
 - Automated test execution through GitHub Actions
 
 ## Test Coverage
@@ -17,6 +19,7 @@ Automation testing framework developed using Playwright and TypeScript to demons
 - Valid Login
 - Invalid Login
 - Add Item to Cart
+- Complete Checkout Flow
 
 ### API Tests
 
@@ -36,10 +39,13 @@ Automation testing framework developed using Playwright and TypeScript to demons
 pages/
 ├── LoginPage.ts
 ├── ProductsPage.ts
+├── CartPage.ts
+└── CheckoutPage.ts
 
 tests/
 ├── login.spec.ts
 ├── cart.spec.ts
+├── checkout.spec.ts
 └── api/
     ├── users.api.spec.ts
     └── posts.api.spec.ts
@@ -56,6 +62,12 @@ fixtures/
 ```bash
 npm install
 npx playwright test
+```
+
+Run smoke tests:
+
+```bash
+npx playwright test --grep @smoke
 ```
 
 ## Continuous Integration

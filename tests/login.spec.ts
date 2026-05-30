@@ -4,7 +4,7 @@ import users from '../fixtures/users.json';
 
 test.describe('Login Tests', () => {
 
-    test('Valid Login', async ({ page }) => {
+    test('Valid Login @smoke', async ({ page }) => {
 
         const loginPage = new LoginPage(page); // loginpage object
 

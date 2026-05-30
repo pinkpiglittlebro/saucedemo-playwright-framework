@@ -9,7 +9,7 @@ import users from '../fixtures/users.json';
 
 test.describe('Checkout Tests', () => {
 
-    test('Complete Checkout Flow', async ({ page }) => {
+    test('Complete Checkout Flow @smoke', async ({ page }) => {
 
         const loginPage = new LoginPage(page);
         const productsPage = new ProductsPage(page);
@@ -38,6 +38,8 @@ test.describe('Checkout Tests', () => {
         await checkoutPage.continueCheckout();
 
         await checkoutPage.finishOrder();
+
+  
 
         await expect(
             checkoutPage.completeHeader
